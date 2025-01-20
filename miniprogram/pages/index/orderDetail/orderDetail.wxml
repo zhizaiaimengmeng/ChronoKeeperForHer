@@ -1,0 +1,39 @@
+<!-- pages/orderDetail/orderDetail.wxml -->
+<view class="container">
+  <view wx:if="{{orderDetail}}" class="order-info">
+    <!-- 订单编号 -->
+    <view class="info-block">
+      <text class="label">订单编号：</text>
+      <text class="value">{{orderDetail._id}}</text>
+    </view>
+    <!-- 总金额 -->
+    <view class="info-block">
+      <text class="label">总金额：</text>
+      <text class="value">{{orderDetail.totalPrice}}元</text>
+    </view>
+    <!-- 订单状态 -->
+    <view class="info-block" wx:if="{{isAdmin}}">
+      <text class="label">订单状态：</text>
+      <picker mode="selector" range="{{statusOptions}}" value="{{statusIndex}}" bindchange="onStatusChange">
+        <view>{{statusOptions[statusIndex]}}</view>
+      </picker>
+    </view>
+    <view class="info-block" wx:else>
+      <text class="label">订单状态：</text>
+      <text class="value">{{statusOptions[statusIndex]}}</text>
+    </view>
+    <!-- 产品列表 -->
+    <view class="products-list">
+      <block wx:for="{{orderDetail.products}}" wx:key="productId">
+        <view class="product-item">
+          <text>{{item.mealName}} x {{item.quantity}}</text>
+        </view>
+      </block>
+    </view>
+    <!-- 仅当是管理员时显示保存按钮 -->
+    <button wx:if="{{isAdmin}}" type="primary" bindtap="updateOrderStatus">完成订单</button>
+  </view>
+  <view wx:else>
+    正在加载订单详情...
+  </view>
+</view>

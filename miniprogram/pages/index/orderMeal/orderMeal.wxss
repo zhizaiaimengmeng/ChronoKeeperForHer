@@ -1,0 +1,209 @@
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.menu-item image {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.menu-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-info text {
+  font-size: 16px;
+  color: #333;
+}
+
+.price {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: flex-end; /* 将加号、减号和数量整体右移到最右边 */
+}
+
+.quantity-button {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+  margin: 0 5px; /* 减少按钮之间的间距 */
+}
+
+.quantity-text {
+  font-size: 16px;
+  color: #333;
+  margin: 0 5px; /* 减少数量文本与按钮之间的间距 */
+}
+
+/* 确保底部导航栏固定在页面底部 */
+/* 确保底部导航栏固定在页面底部 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, .1);
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  color: #ff5722;
+}
+
+.cart-icon image {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.order-button {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-right: 0;
+}
+
+.expanded-cart-view {
+  position: fixed;
+  bottom: 80px; /* 设置在底部导航栏之上 */
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.1s ease;
+  background-color: #f8f8f8;
+  z-index: 1000;
+}
+
+.expanded-cart-view.show {
+  height: 40vh;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 垂直居中 */
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 按钮容器 */
+.button-container {
+  display: flex;
+  flex-direction: column; /* 子元素垂直排列 */
+  align-items: flex-end; /* 子元素沿横轴右对齐 */
+}
+
+.clear-button {
+  color: gray;
+  font-size: 12px;
+  margin-top: 5px; /* 添加顶部外边距使它与关闭按钮隔开一些距离 */
+}
+
+.close-button {
+  background: none; /* 移除默认背景色 */
+  border: none; /* 移除默认边框 */
+  padding: 0; /* 移除默认内边距 */
+}
+
+.close-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.cart-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item image {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: space-between; /* 水平分布 */
+  align-items: center; /* 垂直居中 */
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: center; /* 让内容水平居中 */
+  align-items: center; /* 让内容垂直居中 */
+  width: 30px; /* 根据需要调整大小 */
+  height: 30px; /* 根据需要调整大小 */
+  background-color: #f2f2f2; /* 背景颜色 */
+  border: 1px solid #ccc; /* 边框 */
+  border-radius: 50%; /* 圆形按钮 */
+  font-size: 20px; /* 文字大小 */
+  line-height: 1; /* 确保文字不会被拉伸 */
+}
+
+.quantity-button:active {
+  background-color: #e0e0e0; /* 点击时的背景颜色 */
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+}
+
+.order-button {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+}

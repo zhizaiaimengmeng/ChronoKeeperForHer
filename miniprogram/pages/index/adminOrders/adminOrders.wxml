@@ -1,0 +1,19 @@
+<!-- pages/adminOrders/adminOrders.wxml -->
+<view class="container">
+  <block wx:if="{{orders.length > 0}}">
+    <block wx:for="{{orders}}" wx:key="orderId">
+      <navigator url="/pages/index/orderDetail/orderDetail?orderId={{item._id}}" class="order-item">
+        <text>订单编号：{{item._id}}</text>
+        <text>总金额：{{item.totalPrice}}元</text>
+        <text>下单人：{{item.username}}</text>
+        <text class="status status--{{item.statusCode}}">
+          订单状态：{{item.statusCode === 0 ? '待处理' : '已完成'}}
+        </text>
+        <!-- 根据实际情况添加更多订单详情 -->
+      </navigator>
+    </block>
+  </block>
+  <block wx:else>
+    <text class="no-orders">暂无订单</text>
+  </block>
+</view>

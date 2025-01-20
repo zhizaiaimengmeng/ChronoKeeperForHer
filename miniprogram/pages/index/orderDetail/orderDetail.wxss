@@ -1,0 +1,47 @@
+/* pages/orderDetail/orderDetail.wxss */
+.container {
+  padding: 20px;
+}
+
+.order-info {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.info-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+}
+
+.value {
+  color: #666;
+}
+
+.products-list {
+  margin-top: 20px;
+}
+
+.product-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+}

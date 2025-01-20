@@ -1,0 +1,144 @@
+/* 整体容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f8fa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position:absolute; /* 确保新增按钮定位正确 */
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #007aff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #005bb5;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  padding: 2px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 确保模态框在最顶层 */
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* 单个菜品项 */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px 0;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 菜品信息 */
+.menu-info {
+  display: flex;
+  align-items: center;
+}
+
+.menu-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.menu-name {
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 菜品操作 */
+.menu-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button .icon {
+  filter: invert(42%) sepia(95%) saturate(6363%) hue-rotate(172deg) brightness(93%) contrast(104%);
+}
+
+.delete-button .icon {
+  filter: invert(22%) sepia(95%) saturate(6363%) hue-rotate(355deg) brightness(93%) contrast(104%);
+}

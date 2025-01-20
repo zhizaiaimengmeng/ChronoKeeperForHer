@@ -1,0 +1,44 @@
+/* pages/adminOrders/adminOrders.wxss */
+.container {
+  padding: 20px;
+}
+
+.order-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.order-item text {
+  display: block; /* 让每个text标签占据一行 */
+  margin-bottom: 8px; /* 给每个信息项之间添加间隔 */
+}
+
+.order-item .status {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 根据订单状态设置不同颜色 */
+.order-item .status--pending {
+  color: orange;
+}
+
+.order-item .status--shipped {
+  color: blue;
+}
+
+.order-item .status--completed {
+  color: green;
+}
+
+/* 如果没有订单时的信息提示 */
+.no-orders {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+}

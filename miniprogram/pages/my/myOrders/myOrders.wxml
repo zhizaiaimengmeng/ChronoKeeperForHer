@@ -1,0 +1,12 @@
+<!-- pages/myOrders/myOrders.wxml -->
+<view class="container">
+  <block wx:for="{{orders}}" wx:key="_id">
+    <view class="order-item">
+      <text>订单编号：{{item._id}}</text>
+      <text>下单时间：{{item.formattedCreatedAt}}</text>
+      <text>总价：￥{{item.totalPrice}}</text>
+      <text>状态：{{item.statusValue}}</text>
+      <button bindtap="showDetail" data-index="{{index}}">查看详情</button>
+    </view>
+  </block>
+</view>

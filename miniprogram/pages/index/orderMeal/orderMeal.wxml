@@ -1,0 +1,65 @@
+<view class="menu-list">
+  <view wx:for="{{menuItems}}" wx:key="index" class="menu-item">
+    <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+    <view class="menu-info">
+      <text>{{item.mealName}}</text>
+      <!-- <view class="price">{{item.price}}元</view> -->
+      <view class="quantity">
+        <button bindtap="decreaseQuantity" data-index="{{index}}" class="quantity-button">-</button>
+        <text class="quantity-text">{{item.quantity}}</text>
+        <button bindtap="increaseQuantity" data-index="{{index}}" class="quantity-button">+</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部导航栏，根据totalQuantity是否大于0决定是否显示 -->
+<!-- 扩展的购物车视图 -->
+<!-- 扩展的购物车视图 -->
+<view class="expanded-cart-view" wx:if="{{isCartExpanded}}" style="height:{{isCartExpanded ? '40vh' : '0'}};">
+  <view class="cart-header">
+  <text>已加购商品</text>
+  <!-- 定义一个专门用于放置关闭和清空按钮的容器 -->
+  <view class="button-container">
+    <!-- 使用图片作为关闭按钮 -->
+    <button bindtap="closeCart" class="close-button">
+      <image src="cloud://rockjimmy-6gcbj7xz0cc3574c.726f-rockjimmy-6gcbj7xz0cc3574c-1334778864/我和我的女王/关闭.png" mode="aspectFit" class="close-icon"/>
+    </button>
+    <!-- 清空按钮 -->
+    <button bindtap="clearCart" class="clear-button">清空</button>
+  </view>
+</view>
+    <scroll-view scroll-y="true" style="height: 100%;">
+      <block wx:for="{{menuItems}}" wx:key="index">
+        <view wx:if="{{item.quantity > 0}}" class="cart-item">
+          <image src="{{item.imageUrl}}" mode="aspectFill"></image>
+          <view class="cart-item-info">
+            <text>{{item.mealName}}</text>
+            <text>{{item.description}}</text>
+            <!-- <text>¥{{item.price}}</text> -->
+          </view>
+          <view class="quantity-control">
+            <button bindtap="decreaseQuantity" data-index="{{index}}" class="quantity-button">-</button>
+            <text>{{item.quantity}}</text>
+            <button bindtap="increaseQuantity" data-index="{{index}}" class="quantity-button">+</button>
+        </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="cart-footer">
+      <view class="total-price">
+        <text>共减 -¥1</text>
+        <text>¥{{totalPrice}}</text>
+      </view>
+      <button bindtap="placeOrder" class="order-button">下单</button>
+    </view>
+  </view>
+
+  <!-- 底部导航栏 -->
+  <view class="bottom-bar" wx:if="{{totalQuantity > 0}}">
+    <view class="cart-icon" bindtap="toggleCartView">
+      <image src="cloud://rockjimmy-6gcbj7xz0cc3574c.726f-rockjimmy-6gcbj7xz0cc3574c-1334778864/我和我的女王/购物车.png" mode="aspectFit"></image>
+      <text>{{totalQuantity}}</text>
+    </view>
+    <button bindtap="placeOrder" class="order-button">下单</button>
+  </view>

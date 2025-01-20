@@ -1,0 +1,21 @@
+{
+  "name": "me-and-my-doodle",
+  "version": "1.0.0",
+  "description": "个人日常使用小程序",
+  "main": "index.js",
+  "dependencies": {
+    "weui-miniprogram": "^1.5.6",
+    "wux-weapp": "^3.11.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/zheng_yongtao/me-and-my-doodle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- 新增菜品按钮 -->
+  <button class="add-button icon-button" bindtap="showAddModal">
+    <image class="icon" src="cloud://rockjimmy-6gcbj7xz0cc3574c.726f-rockjimmy-6gcbj7xz0cc3574c-1334778864/我和我的女王/add_icon.png"></image>
+  </button>
+
+  <!-- 新增菜品弹窗 -->
+  <view class="modal" hidden="{{!isAddModalVisible}}">
+    <view class="modal-content card">
+      <input class="input-field" placeholder="菜品名称" value="{{newMealName}}" bindinput="onNewMealNameChange"/>
+      <button class="action-button upload-button" bindtap="uploadImage">上传图片</button>
+      <block wx:if="{{uploadedImageUrl}}">
+        <image class="uploaded-image" src="{{uploadedImageUrl}}" mode="aspectFit"></image>
+      </block>
+      <button class="action-button save-button" bindtap="addMenu">保存</button>
+      <button class="action-button cancel-button" bindtap="hideAddModal">取消</button>
+    </view>
+  </view>
+  <!-- 编辑菜品弹窗 -->
+  <view class="modal" hidden="{{!isEditModalVisible}}">
+    <view class="modal-content card">
+      <input class="input-field" placeholder="菜品名称" value="{{newMealName}}" bindinput="onNewMealNameChange"/>
+      <button class="action-button upload-button" bindtap="uploadImage">上传图片</button>
+      <block wx:if="{{uploadedImageUrl}}">
+        <image class="uploaded-image" src="{{uploadedImageUrl}}" mode="aspectFit"></image>
+      </block>
+      <button class="action-button save-button" bindtap="editMenu">保存</button>
+      <button class="action-button cancel-button" bindtap="hideEditModal">取消</button>
+    </view>
+  </view>
+
+  <!-- 菜品列表 -->
+  <block wx:for="{{menus}}" wx:key="id">
+    <view class="menu-item card animate__animated animate__fadeInUp" data-id="{{item._id}}">
+      <view class="menu-info"  >
+        <image class="menu-image" src="{{item.imageUrl}}" mode="aspectFit" bindtap="handlePreviewImage" data-item="{{item}}"></image>
+        <text class="menu-name">{{item.mealName}}</text>
+      </view>
+      <view class="menu-actions">
+        <button class="action-button edit-button icon-button" bindtap="showEditModal" data-item="{{item}}">
+          <image class="icon" src="cloud://rockjimmy-6gcbj7xz0cc3574c.726f-rockjimmy-6gcbj7xz0cc3574c-1334778864/我和我的女王/edit-icon .png"></image>
+        </button>
+        <button class="action-button delete-button icon-button" bindtap="deleteMenu" data-id="{{item._id}}">
+          <image class="icon" src="cloud://rockjimmy-6gcbj7xz0cc3574c.726f-rockjimmy-6gcbj7xz0cc3574c-1334778864/我和我的女王/delete_icon.png"></image>
+        </button>
+      </view>
+    </view>
+  </block>
+</view>
